@@ -92,6 +92,7 @@ void loop()
         if (currTime - button_on_time > 5000) {
           strip_on = turnStripOnOff(strip_on);
           while (digitalRead(BUTTON_PIN)) { }
+          delay(10); // debounce time
           button_curr = STRIP_ON_OFF;
         }
       }
